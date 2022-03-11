@@ -8,10 +8,12 @@ on:
 
 jobs:
   coverity:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     env:
-      COV_URL: ${{ secrets.COV_URL }}
+      #COV_URL: ${{ secrets.COV_URL }}
+      COV_URL: https://cnc.chuckaude.com
       COV_USER: ${{ secrets.COV_USER }}
       COVERITY_PASSPHRASE: ${{ secrets.COVERITY_PASSPHRASE }}
       COV_STREAM: hello-java-master
