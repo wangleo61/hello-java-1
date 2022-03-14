@@ -35,6 +35,4 @@ jobs:
       if: ${{ github.event_name != 'pull_request' }}
       run: |
         export PATH=$PATH:$RUNNER_TEMP/bin
-        export COVERITY_CLI_ANALYSIS_LOCATION=cloud
-        export COVERITY_CLI_CLOUD_ANALYSIS_ASYNC=false
-        coverity scan -o commit.connect.url=$COV_URL -o commit.connect.stream=$COV_STREAM -- $BLDCMD
+        coverity scan -o commit.connect.url=$COV_URL -o commit.connect.stream=$COV_STREAM -o analyze.location=connect -- $BLDCMD
