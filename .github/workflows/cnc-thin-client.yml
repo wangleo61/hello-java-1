@@ -34,4 +34,4 @@ jobs:
     - name: Coverity Full Scan
       if: ${{ github.event_name != 'pull_request' }}
       run: |
-        $RUNNER_TEMP/bin/coverity scan -o commit.connect.url=$COV_URL -o commit.connect.stream=$COV_STREAM -o analyze.location=connect -- $BLDCMD
+        $RUNNER_TEMP/bin/coverity scan -o analyze.location=connect -o commit.connect.url=$COV_URL -o commit.connect.stream=$COV_STREAM -- $BLDCMD
